@@ -1,1 +1,53 @@
 // Specific CSS for your home-page
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 30px;
+}
+
+.home h1 {
+  font-size: 3.125em;
+  font-weight: 900;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  color: #fdfdfd;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.home p {
+  font-size: 1.125em;
+  font-weight: 400;
+  color: #fafafa;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.home {
+  text-align: center;
+}
+
+.body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 150px;
+  background-color: #0b211b ;
+}
+
+.trait_jaune {
+  height: 2px;
+  padding-top: 2px;
+  text-align: center;
+  background-color: #dfd25c;
+  margin-top: 40px;
+}
