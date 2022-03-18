@@ -7,10 +7,23 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+@import "mapbox-gl/dist/mapbox-gl";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "pages/form";
+@import "pages/show";
 @import "components/_btn";
 @import "components/_footer";
+@import "components/_map";
+@import "components/_modif-typo";
+@import "components/_card";
 @import "pages/users/login";

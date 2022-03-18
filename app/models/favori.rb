@@ -1,3 +1,4 @@
 class Favori < ApplicationRecord
-  has_many :spots, through: :users
+  belongs_to :user
+  belongs_to :spot
 end

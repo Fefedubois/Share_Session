@@ -1,5 +1,28 @@
-<ul>
-  <% @spots.each do |spot| %>
-    <li><%= spot.name %></li>
-  <% end %>
-</ul>
+
+<div class="container">
+    <div class="colonnes_2">
+      <div class="colonne_gauche">
+        <% @spots.each do |spot| %>
+        <div class="card" style="width: 18rem;">
+          <img src="<%= spot.photo %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><h2><%= spot.name.capitalize %></h2> </h5>
+            <h4><%= spot.country.capitalize %> </h4>
+            <p class="card-text"><%= spot.description.first(70) %>...</p>
+            <div class="text-center">
+                <% link_to 'Mettre à jour', edit_spot_path(@spots) %>
+                <%= link_to 'Voir le spot', spot, class: "btn btn-outline-primary" %>
+                <% link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+          </div>
+        </div>
+          <% end %>
+        </div>
+        <div class="colonne_droite">
+          <div id="map" style="width: 100%; height: 600px;"
+            data-controller="mapbox"
+            data-mapbox-markers-value="<%= @markers.to_json %>"
+            data-mapbox-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>"></div>
+        </div>
+    </div>
+</div>

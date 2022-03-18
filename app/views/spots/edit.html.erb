@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Modifier mon spot</h1>
+
+  <%= render 'form', spot: @spot %>
+
+  <%= link_to 'Retour', @spot, class: "btn btn-outline-danger" %> |
+  <%= link_to 'Menu', spots_path, class: "btn btn-outline-primary"  %>
+</div>

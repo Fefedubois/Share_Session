@@ -22,7 +22,7 @@
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
   color: #fdfdfd;
   text-align: center;
-  padding-top: 20px;
+
 }
 
 .home p {
@@ -38,7 +38,7 @@
 }
 
 .body {
-  min-height: 100%;
+  height: 100%;
   position: relative;
   padding-bottom: 150px;
   background-color: #0b211b ;
@@ -46,7 +46,7 @@
 
 .trait_jaune {
   height: 2px;
-  padding-top: 2px;
+  padding-top: 1px;
   text-align: center;
   background-color: #dfd25c;
   margin-top: 40px;

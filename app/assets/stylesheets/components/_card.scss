@@ -1,0 +1,30 @@
+
+.card {
+  margin-bottom: 10px;
+}
+
+.card-body h2 {
+  font-size: 23px;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+}
+.card-body h4 {
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+}
+.p.card-text {
+  font-size: 18px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  opacity: .9;
+}
+
+.card-text {
+  padding-top: 10px;
+}
+
+.text-center .btn-outline-primary {
+  border-radius: 20px;
+}
