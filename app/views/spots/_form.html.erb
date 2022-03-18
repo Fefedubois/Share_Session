@@ -10,7 +10,7 @@
 
       <div class="row mb-3">
         <div class="col-sm-2 col-form-label"> <%= f.label :adresse, :label => 'Adresse du Spot' %> </div>
-        <div class="col-sm-10"> <%= f.input :adresse, label: false, placeholder: "Le spot en question..", input_html: { data: { geocoder_target: "adresse" }, class: "d-none" },
+        <div class="col-sm-10"> <%= f.input :adresse, label: false, input_html: { data: { geocoder_target: "adresse" }, class: "d-none" },
               wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }  %> </div>
       </div>
 
@@ -30,11 +30,6 @@
       </div>
 
       <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :publish_date, :label => 'Date de création'%> </div>
-        <div class="col-sm-10"><%= f.input :publish_date, label: false %> </div>
-      </div>
-
-      <div class="row mb-3">
         <div class="col-sm-2 col-form-label"><%= f.label :best_tide, :label => 'Meilleure Marée' %> </div>
         <div class="col-sm-10"><%= f.input :best_tide, label: false, placeholder: "Marée Basse" %> </div>
       </div>
@@ -42,16 +37,6 @@
       <div class="row mb-3">
         <div class="col-sm-2 col-form-label"><%= f.label :best_wind, :label => 'Vent'%> </div>
         <div class="col-sm-10"><%= f.input :best_wind, label: false, placeholder: "Sud-Est" %> </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :latitude, :label => 'Latitude'%> </div>
-        <div class="col-sm-10"><%= f.input :latitude, label: false %> </div>
-       </div>
-
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :longitude, :label => 'Longitude'%> </div>
-        <div class="col-sm-10"><%= f.input :longitude, label: false %> </div>
       </div>
 
       <div class="row mb-3"><%= f.button :submit,"Créer mon Spot", class: "btn btn-primary" %> </div>
