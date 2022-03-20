@@ -1,5 +1,6 @@
 class SpotsController < ApplicationController
   before_action :set_spot, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token
 
   # GET /spots or /spots.json
   def index
@@ -17,12 +18,17 @@ class SpotsController < ApplicationController
 
   # GET /spots/1 or /spots/1.json
   def show
-
+        @markers = [{
+      lat: @spot.latitude,
+      lng: @spot.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { spot: @spot }),
+      image_url: helpers.asset_url("vague.png")
+      }]
   end
 
   # GET /spots/new
   def new
-    @spot = Spot.new
+     @spot = Spot.new
   end
 
   # GET /spots/1/edit
@@ -32,17 +38,15 @@ class SpotsController < ApplicationController
   # POST /spots or /spots.json
   def create
     @spot = Spot.new(spot_params)
+    @spot.user = current_user
 
-    respond_to do |format|
-      if @spot.save
-        format.html { redirect_to spot_url(@spot), notice: "Ton Spot a été crée." }
-        format.json { render :show, status: :created, location: @spot }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @spot.errors, status: :unprocessable_entity }
-      end
+    if @spot.save
+      redirect_to spot_path(@spot)
+    else
+      render :new
     end
   end
+
 
   # PATCH/PUT /spots/1 or /spots/1.json
   def update
@@ -75,6 +79,6 @@ class SpotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spot_params
-      params.require(:spot).permit(:name, :country, :adresse, :photo, :publish_date, :best_tide, :best_wind, :latitude, :longitude, :note, :user_id, :description)
+      params.require(:spot).permit(:name, :country, :adresse, :photos [], :publish_date, :best_tide, :best_wind, :latitude, :longitude, :note, :user_id, :description)
     end
 end

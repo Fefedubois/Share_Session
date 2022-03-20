@@ -7,7 +7,7 @@
           <img src="<%= spot.photo %>" class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title"><h2><%= spot.name.capitalize %></h2> </h5>
-            <h4><%= spot.country.capitalize %> </h4>
+            <h4><%= spot.country%> </h4>
             <p class="card-text"><%= spot.description.first(70) %>...</p>
             <div class="text-center">
                 <% link_to 'Mettre à jour', edit_spot_path(@spots) %>

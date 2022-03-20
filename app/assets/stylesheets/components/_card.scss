@@ -6,19 +6,23 @@
 .card-body h2 {
   font-size: 23px;
   font-weight: bold;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin: 0;
 }
 .card-body h4 {
   font-size: 16px;
   font-weight: 300;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+}
+.card-body p {
+  font-size: 12px;
   margin: 0;
 }
 .p.card-text {
   font-size: 18px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   opacity: .9;
+}
+.list-group li {
+  font-size: 12px;
 }
 
 .card-text {

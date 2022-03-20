@@ -1,7 +1,13 @@
 <div class="container">
-  <h1>Ajouter un nouveau Spot </h1>
+  <div class="row justify-content-center">
+    <div class="col-md">
+      <div class="form-login">
+        <h1>Ajouter un nouveau Spot </h1>
 
-  <%= render 'form', spot: @spot %>
+        <%= render 'form', spot: @spot %>
 
-  <%= link_to 'Retour', spots_path, class: "btn btn-outline-danger" %>
+        <%= link_to 'Retour', spots_path, class: "btn btn-outline-danger" %>
+        </div>
+    </div>
+  </div>
 </div>

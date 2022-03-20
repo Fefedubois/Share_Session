@@ -1,24 +1,19 @@
-.btn-flat {
-  color: white;
+.home_couleur .btn-flat {
+  color: rgba(37, 37, 37, 0.418);
   font-weight: 600;
   padding: 8px 80px;
   border-radius: 20px;
   transition: background 0.3s ease;
   margin-bottom: 20px;
   border-color: #dfd25c;
+  font-family: Poppins;
 }
 
-.btn-flat:hover {
+.home_couleur .btn-flat:hover {
   background: #dfd25c;
   color: white;
 }
 
-
-.btn-primary {
- margin-top: 20px;
- margin-bottom: 20px;
- text-decoration: none;
-}
 
 .btn-primary a {
  text-decoration: none;

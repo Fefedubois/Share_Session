@@ -14,13 +14,14 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-top: 30px;
+  font-family: Poppins;
 }
 
 .home h1 {
   font-size: 3.125em;
   font-weight: 900;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
-  color: #fdfdfd;
+  font-family: Poppins;
+  color: rgba(37, 37, 37, 0.418);
   text-align: center;
 
 }
@@ -28,9 +29,10 @@
 .home p {
   font-size: 1.125em;
   font-weight: 400;
-  color: #fafafa;
+  color: rgba(37, 37, 37, 0.418);
   text-align: center;
   padding-top: 30px;
+  font-family: Poppins;
 }
 
 .home {
@@ -41,7 +43,6 @@
   height: 100%;
   position: relative;
   padding-bottom: 150px;
-  background-color: #0b211b ;
 }
 
 .trait_jaune {

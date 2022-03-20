@@ -1,5 +1,5 @@
 
-#map {
+.colonne_droite #map {
   height: 100%;
   position: sticky;
   top: 0;
@@ -11,7 +11,10 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+}
+
+.mapboxgl-popup-content h2 {
+  font-size: 20px;
 }
 
 .mapboxgl-ctrl-geocoder {
