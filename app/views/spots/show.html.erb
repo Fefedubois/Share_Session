@@ -1,39 +1,50 @@
 
 <div class="container">
-  <div class="englobe">
-    <div class="card" style="width: 40rem;">
-      <img src="<%= @spot.photo %>" class="card-img-top" alt="..." style="height: 300px;">
-      <div class="card-body">
-        <h5 class="card-title"><%= @spot.name.capitalize %></h5>
-        <p class="card-text"> <%= @spot.country%> </p>
-        <p class="card-text"> <strong>Description : </strong>  <%= @spot.description %> </p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"> <strong> Note : </strong> <%= @spot.note %>/5 </li>
-        <li class="list-group-item"> <strong>Meilleure Marée :</strong> <%= @spot.best_tide.capitalize %></li>
-        <li class="list-group-item"><strong> Meilleur vent :</strong> <%= @spot.best_wind.capitalize %></li>
-        <li class="list-group-item"><strong> Longitude :</strong> <%= @spot.longitude %> <strong>- Latitude :</strong> <%= @spot.latitude %> </li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success'  %> |</a>
-        <a href="#" class="card-link"><%= link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Etes vous sur?', class: 'btn btn-outline-primary'  } %> </a>
-        <a href="#" class="card-link"><%= link_to 'Retour', spots_path, class: 'btn btn-outline-danger'  %></a>
-      </div>
+  <div class="modal-body row">
+    <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="card" style="width: 100%;">
+              <div class="card-img-top">
+                <% if @spot.image.attached? %>
+                <%= image_tag @spot.image, style:"height: 300px; width: 100%;" %>
+                <% else %>
+                <img src="https://source.unsplash.com/random" style="width: 100%; height: 300px;" class="card-img-top">
+                <% end %>
+              </div>
+                <div class="card-body">
+                  <h5 class="card-title"><%= @spot.name.capitalize %></h5>
+                  <p class="card-text"> <%= @spot.country%> </p>
+                  <p class="card-text"> <strong>Description : </strong>  <%= @spot.description %> </p>
+                </div>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> <strong> Note : </strong> <%= @spot.note %>/5 </li>
+                    <li class="list-group-item"> <strong>Meilleure Marée :</strong> <%= @spot.best_tide.capitalize %></li>
+                    <li class="list-group-item"><strong> Meilleur vent :</strong> <%= @spot.best_wind.capitalize %></li>
+                    <li class="list-group-item"><strong> Longitude :</strong> <%= @spot.longitude %> <strong>- Latitude :</strong> <%= @spot.latitude %> </li>
+                  </ul>
+                <div class="card-body">
+                  <a class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success'  %> |</a>
+                  <a class="card-link"><%= link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Etes vous sur?' }, class: 'btn btn-outline-primary' %> |</a>
+                  <a class="card-link"><%= link_to 'Retour', spots_path, class: 'btn btn-outline-danger'  %></a>
+                </div>
+            </div>
     </div>
-      <div class="colonne_droite_show">
-        <div id="map" style="width: 100%; height: 500px;"
-          data-controller="mapbox"
-          data-mapbox-markers-value="<%= @markers.to_json %>"
-          data-mapbox-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>"></div>
 
 
-        <div class="partage_ami">
-          <h3> <%= "Partager ce spot à un ami" %> </h3>
-          <p> <%= "Facebook : www.sdniznfiaiaoizi.com" %> </p>
-          <p> <%= "Messenger : www.sdniznfiaiaoizi.com" %> </p>
-          <p> <%= "Lien : www.sdniznfiaiaoizi.com" %> </p>
+          <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="colonne_droite_show">
+              <div id="map" style="width: 100%; height: 500px;"
+                data-controller="mapbox"
+                data-mapbox-markers-value="<%= @markers.to_json %>"
+                data-mapbox-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
+              </div>
 
-        </div>
-      </div>
+              <div class="partage_ami">
+                <h3> <%= "Partager ce spot à un ami" %> </h3>
+                <p> <%= "Facebook : www.sdniznfiaiaoizi.com" %> </p>
+                <p> <%= "Messenger : www.sdniznfiaiaoizi.com" %> </p>
+                <p> <%= "Lien : www.sdniznfiaiaoizi.com" %> </p>
+              </div>
+            </div>
+          </div>
   </div>
 </div>

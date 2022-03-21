@@ -4,7 +4,11 @@
       <div class="colonne_gauche">
         <% @spots.each do |spot| %>
         <div class="card" style="width: 18rem;">
-          <img src="<%= spot.photo %>" class="card-img-top" alt="...">
+         <% if spot.image.attached? %>
+          <%= image_tag spot.image %>
+         <% else %>
+          <img src="https://images.unsplash.com/photo-1616449973117-0e1d99c56ed3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c3VyZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top">
+         <% end %>
           <div class="card-body">
             <h5 class="card-title"><h2><%= spot.name.capitalize %></h2> </h5>
             <h4><%= spot.country%> </h4>

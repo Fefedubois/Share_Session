@@ -1,4 +1,4 @@
-<div class="container">
+
   <%= simple_form_for(@spot) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -22,17 +22,24 @@
 
       <div class="row mb-3">
         <div class="col-sm-2 col-form-label"><%= f.label :note, :label => 'Note' %> </div>
-        <div class="col-sm-10"><%= f.input :note, label: false, placeholder: "5"  %> </div>
+        <div class="col-sm-10"><%= f.input :note, collection: (1..5).to_a, label: false %> </div>
        </div>
 
+<%# -------------------------note-------------------------------------------------- %>
+
+
+<%# -------------------------note-------------------------------------------------- %>
+
       <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :photo, :label => 'Photos' %> </div>
-        <div class="col-sm-10"><%=f.input :photo, as: :file, label: false %>
+       <div class="col-sm-2 col-form-label"><%= f.label :photo, :label => 'Photo' %> </div>
+
+      <div class="col-sm-10"><%= f.input :image, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Télécharge ta photo' %> </div>
       </div>
+
 
       <div class="row mb-3">
         <div class="col-sm-2 col-form-label"><%= f.label :best_tide, :label => 'Meilleure Marée' %> </div>
-        <div class="col-sm-10"><%= f.input :best_tide, label: false, placeholder: "Marée Basse" %> </div>
+        <div class="col-sm-10"><%= f.input :best_tide, label: false, placeholder: "Marée Basse", collection: ["Marée Haute", "Marée Basse", "Mi-marée montante", "Mi-marée descendante"]  %> </div>
       </div>
 
       <div class="row mb-3">
@@ -43,4 +50,3 @@
       <div class="row mb-3"><%= f.button :submit,"Créer mon Spot", class: "btn btn-primary" %> </div>
 
   <% end %>
-</div>

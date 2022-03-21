@@ -23,12 +23,17 @@ class SpotsController < ApplicationController
       lng: @spot.longitude,
       info_window: render_to_string(partial: "info_window", locals: { spot: @spot }),
       image_url: helpers.asset_url("vague.png")
-      }]
+      }
+    ]
   end
 
   # GET /spots/new
   def new
-     @spot = Spot.new
+    if user_signed_in?
+      @spot = Spot.new
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   # GET /spots/1/edit
@@ -79,6 +84,6 @@ class SpotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spot_params
-      params.require(:spot).permit(:name, :country, :adresse, :photos [], :publish_date, :best_tide, :best_wind, :latitude, :longitude, :note, :user_id, :description)
+      params.require(:spot).permit(:name, :country, :adresse, :publish_date, :best_tide, :best_wind, :latitude, :longitude, :note, :user_id, :description, :image)
     end
 end
