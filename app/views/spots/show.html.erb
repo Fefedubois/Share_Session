@@ -19,7 +19,6 @@
                     <li class="list-group-item"> <strong> Note : </strong> <%= @spot.note %>/5 </li>
                     <li class="list-group-item"> <strong>Meilleure Marée :</strong> <%= @spot.best_tide.capitalize %></li>
                     <li class="list-group-item"><strong> Meilleur vent :</strong> <%= @spot.best_wind.capitalize %></li>
-                    <li class="list-group-item"><strong> Longitude :</strong> <%= @spot.longitude %> <strong>- Latitude :</strong> <%= @spot.latitude %> </li>
                   </ul>
                 <div class="card-body">
                   <a class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success'  %> |</a>

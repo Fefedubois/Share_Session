@@ -269,7 +269,6 @@ SimpleForm.setup do |config|
     b.optional :hint, wrap_with: { tag: 'small', class: 'form-text text-muted' }
   end
 
-
   # bootstrap custom forms
   #
   # custom input for boolean
