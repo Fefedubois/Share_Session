@@ -3,10 +3,21 @@
   background: white;
 }
 
+a.navbar-brand  {
+  font-family: 'Palette Mosaic', cursive;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 72px;
+  height: 72px;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }

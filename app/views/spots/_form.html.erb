@@ -44,7 +44,7 @@
 
       <div class="row mb-3">
         <div class="col-sm-2 col-form-label"><%= f.label :best_wind, :label => 'Vent'%> </div>
-        <div class="col-sm-10"><%= f.input :best_wind, label: false, placeholder: "Sud-Est" %> </div>
+        <div class="col-sm-10"><%= f.input :best_wind, label: false, placeholder: "Sud-Est", collection: ["Sud", "Sud-Est", "Sud-Ouest", "Ouest", "Est", "Nord", "Nord-Est", "Nord-Ouest"]   %> </div>
       </div>
 
       <div class="row mb-3"><%= f.button :submit,"Créer mon Spot", class: "btn btn-primary" %> </div>

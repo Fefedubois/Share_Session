@@ -5,19 +5,21 @@
 //--------page index---------------------
 
 .colonne_gauche {
-  width: 600px;
   display: grid;
-  grid-template-columns: 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr ;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.colonne_droite {
- width: 360px;
- height: 100%;
+@media (min-width: 800px) {
+  .colonne_gauche { grid-template-columns: repeat(2, 1fr); }
+}
 
+/* Screen larger than 900px? 3 columns */
+@media (min-width: 1200px) {
+  .colonne_gauche { grid-template-columns: repeat(3, 1fr); }
 }
 
 .colonnes_2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   padding-top: 20px;
 }

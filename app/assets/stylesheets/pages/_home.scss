@@ -17,42 +17,31 @@
   font-family: Poppins;
 }
 
-.home h1 {
-  font-size: 3.125em;
-  font-weight: 900;
-  font-family: Poppins;
-  color: rgba(37, 37, 37, 0.418);
-  text-align: center;
+.carousel-caption h5 {
+  font-size: 90px;
+  color: white;
+  font-weight: 700;
+  font-family: futura;
 
 }
-
-.home p {
-  font-size: 1.125em;
-  font-weight: 400;
-  color: rgba(37, 37, 37, 0.418);
-  text-align: center;
-  padding-top: 30px;
-  font-family: Poppins;
+.carousel-caption p {
+  font-size: 60px;
+  color: white;
+  font-weight: 300;
+  font-family: futura;
 }
 
-.home {
-  text-align: center;
-}
+
 
 .body {
-  height: 100%;
-  position: relative;
-  padding-bottom: 150px;
+ min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.trait_jaune {
-  height: 2px;
-  padding-top: 1px;
-  text-align: center;
-  background-color: #dfd25c;
-  margin-top: 40px;
-}
+  @media (min-width: 800px) and (max-width: 850px) {
 
-.colonne_gauche .btn-outline-primary {
-    margin-top: 20px;
-    }
+          }
+
+.carousel,.carousel .carousel-inner,.carousel .carousel-inner .active,.carousel .carousel-inner .carousel-item,.view,body,html{height:100%}

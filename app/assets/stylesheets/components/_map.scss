@@ -1,8 +1,9 @@
 
-.colonne_droite #map {
-  height: 100%;
+.colonne_droite {
+  min-height: 100%;
   position: sticky;
   top: 0;
+  margin-bottom: 20px;
 }
 
 .mapboxgl-popup {
@@ -22,4 +23,11 @@
   width: 100%;
   border: 1px solid lightgrey;
   box-shadow: none;
+}
+
+
+.mapboxgl-canvas{
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }

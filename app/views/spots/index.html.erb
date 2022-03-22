@@ -1,32 +1,42 @@
 
 <div class="container">
-    <div class="colonnes_2">
-      <div class="colonne_gauche">
-        <% @spots.each do |spot| %>
-        <div class="card" style="width: 18rem;">
-         <% if spot.image.attached? %>
-          <%= image_tag spot.image %>
-         <% else %>
-          <img src="https://images.unsplash.com/photo-1616449973117-0e1d99c56ed3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c3VyZnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" class="card-img-top">
-         <% end %>
-          <div class="card-body">
-            <h5 class="card-title"><h2><%= spot.name.capitalize %></h2> </h5>
-            <h4><%= spot.country%> </h4>
-            <p class="card-text"><%= spot.description.first(70) %>...</p>
-            <div class="text-center">
-                <% link_to 'Mettre à jour', edit_spot_path(@spots) %>
-                <%= link_to 'Voir le spot', spot, class: "btn btn-outline-primary" %>
-                <% link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Are you sure?' } %>
-              </div>
-          </div>
-        </div>
-          <% end %>
-        </div>
-        <div class="colonne_droite">
+  <div class="modal-body row">
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <div class="colonne_droite ">
           <div id="map" style="width: 100%; height: 600px;"
             data-controller="mapbox"
             data-mapbox-markers-value="<%= @markers.to_json %>"
             data-mapbox-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>"></div>
         </div>
-    </div>
+      </div>
+
+    <div class="col-xs-12 col-sm-8 col-md-8">
+        <div class="colonne_gauche">
+          <% @spots.each do |spot| %>
+            <div class="card" style="width: 100%;">
+              <div class="card_image">
+                <% if spot.image.attached? %>
+                  <%= image_tag spot.image %>
+                <% else %>
+                  <img src="http://www.boardrap.com/wp-content/uploads/2017/07/skeleton-bay-namibia-best-surf-line-up-shot-ever.jpg" class="card-img-top">
+                <% end %>
+              </div>
+                  <div class="card_content">
+                    <h5 class="card-title"><h2><%= spot.name.capitalize %></h2> </h5>
+                    <h4><%= spot.country%> </h4>
+                    <p class="card_text"><%= spot.description.first(70) %>...</p>
+                      <div class="text-center">
+                          <% link_to 'Mettre à jour', edit_spot_path(@spots) %>
+                          <%= link_to 'Voir le spot', spot, class: "btn btn-outline-primary" %>
+                          <% link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </div>
+
+            </div>
+        </div>
+            <% end %>
+        </div>
+      </div>
+
+
+  </div>
 </div>
