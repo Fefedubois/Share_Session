@@ -23,14 +23,12 @@
           <a class="nav-link" href="#"><%= link_to "Ajouter un spot", new_spot_path, class: "btn btn-outline-primary" %></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"><%= link_to "Mes Favoris", @favoris_path, class: "btn btn-outline-success" %></a>
+            <a class="nav-link"><%= link_to "Mes Spots", spots_path, class: "btn btn-outline-success" %></a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link"><%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn btn-outline-warning" %></a>
           </li>
-
-
 
         <% else %>
           <li class="nav-item">

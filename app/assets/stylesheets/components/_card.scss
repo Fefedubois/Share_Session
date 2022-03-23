@@ -1,7 +1,7 @@
 
 .colonne_gauche .card {
   margin-bottom: 10px;
-  height: 500px;
+  height: 450px;
 
 
 }
@@ -35,6 +35,12 @@
 .text-center .btn-outline-primary {
   border-radius: 20px;
 }
+.text-center .btn-outline-success {
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
 
 /* Design */
@@ -55,8 +61,9 @@
 
 .card_image img {
   height: auto;
-  max-height: 100%;
+  max-height: 175px;
   max-width: 100%;
+  min-width: 100%;
   vertical-align: middle;
 }
 
@@ -90,6 +97,10 @@
   letter-spacing: 1px;
   text-transform: capitalize;
   margin: 0px;
+}
+h2 .card_title  {
+  font-size: 2px;
+
 }
 
 .card_text {

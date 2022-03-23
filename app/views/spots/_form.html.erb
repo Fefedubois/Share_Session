@@ -26,7 +26,7 @@
 
       <div class="row mb-3">
         <div class="col-sm-2 col-form-label"><%= f.label :note, :label => 'Note ⭐' %> </div>
-        <div class="col-sm-10"><%= f.input :note, label: false, as: :radio_buttons, collection: [['Excellent', 5, { class: "one-star" }], ['Très bien', 4, { class: "two-stars" }], ["Moyen", 3, { class:"three-stars" }], ["Nul", 2, { class:"three-stars" }], ["Horrible", 1, { class:"three-stars" }, label: false ]] %> </div>
+        <div class="col-sm-10"><%= f.input :note, label: false, as: :radio_buttons, collection: [['Excellent', 5, { class: "one-star" }], ['Très bien', 4, { class: "two-stars" }], ["Moyen", 3, { class:"three-stars" }], ["Nul", 2, { class:"three-stars" }], ["Horrible", 1, { class:"three-stars" }, class: "horizontal-align" ]] %> </div>
        </div>
 
 <%# -------------------------note-------------------------------------------------- %>

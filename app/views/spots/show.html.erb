@@ -21,9 +21,9 @@
                     <li class="list-group-item"><strong> Meilleur vent :</strong> <%= @spot.best_wind.capitalize %></li>
                   </ul>
                 <div class="card-body">
-                  <a class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success'  %> |</a>
-                  <a class="card-link"><%= link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Etes vous sur?' }, class: 'btn btn-outline-primary' %> |</a>
-                  <a class="card-link"><%= link_to 'Retour', spots_path, class: 'btn btn-outline-danger'  %></a>
+                  <a class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success', style: "font-size: 14px;"  %> |</a>
+                  <a class="card-link"><%= link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Etes vous sur?' }, class: 'btn btn-outline-primary', style: "font-size: 14px;" %> |</a>
+                  <a class="card-link"><%= link_to 'Retour', spots_path, class: 'btn btn-outline-danger', style: "font-size: 14px;"  %></a>
                 </div>
             </div>
     </div>
