@@ -1,7 +1,8 @@
+    <%= render 'shared/slidebar' %>
 
 <div class="container">
   <div class="modal-body row">
-      <div class="col-xs-12 col-sm-4 col-md-4">
+      <div class="col-xs-12 col-sm-4 col-md-4" style="position:sticky">
         <div class="colonne_droite ">
           <div id="map" style="width: 100%; height: 600px;" style="position:sticky"
             data-controller="mapbox"
@@ -12,6 +13,7 @@
 
     <div class="col-xs-12 col-sm-8 col-md-8">
         <div class="colonne_gauche">
+
           <% @spots.each do |spot| %>
             <div class="card" style="width: 100%;">
               <div class="card_image">
@@ -22,8 +24,8 @@
                 <% end %>
               </div>
                   <div class="card_content">
-                    <h5 class="card-title"><h2  style="font-size: 27px;"><%= spot.name.capitalize %></h2> </h5>
-                    <h4  style="font-size: 20px; text-transform: capitalize"><%= spot.country%> </h4>
+                    <h5 class="card-title"><h2  style="font-size: 22px; min-height: 31px ;font-weight: 700; box-shadow: inset 0 -12px 0 #4d854b61; color: rgb(53, 102, 83);"><%= spot.name.capitalize %></h2> </h5>
+                    <h4  style="font-size: 15px; text-transform: capitalize, min-height: 31px;"><%= spot.country%> </h4>
                     <p class="card_text"><%= spot.description.first(70) %>...</p>
                       <div class="text-center">
                           <% link_to 'Mettre à jour', edit_spot_path(@spots) %>
@@ -39,7 +41,5 @@
             <% end %>
         </div>
       </div>
-
-
   </div>
 </div>

@@ -1,56 +1,77 @@
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 
   <%= simple_form_for(@spot) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"> <%= f.label :name, :label => 'Nom 👑' %> </div>
-        <div class="col-sm-10"> <%= f.input :name, label: false, placeholder: "Nom du Spot" %> </div>
+<div class="row g-4">
+      <div class="col-md-6">
+        <div> <%= f.label :name, :label => 'Nom :' %> </div>
+        <div> <%= f.input :name, label: false, placeholder: "Nom du Spot" %> </div>
       </div>
 
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"> <%= f.label :adresse, :label => 'Adresse du Spot 🗺' %> </div>
-        <div class="col-sm-10"> <%= f.input :adresse, label: false, input_html: { data: { geocoder_target: "adresse" }, class: "d-none" },
-              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }  %> </div>
-      </div>
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"> <%= f.label :country, :label => 'Pays 🗺' %> </div>
-        <div class="col-sm-10"> <%= f.input :country, as: :country, label: false, placeholder: "France" %> </div>
-      </div>
-
-
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :description, :label => 'Description 🧾' %> </div>
-        <div class="col-sm-10"><%= f.input :description, label: false, placeholder: "Description du Spot" %> </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :note, :label => 'Note ⭐' %> </div>
-        <div class="col-sm-10"><%= f.input :note, label: false, as: :radio_buttons, collection: [['Excellent', 5, { class: "one-star" }], ['Très bien', 4, { class: "two-stars" }], ["Moyen", 3, { class:"three-stars" }], ["Nul", 2, { class:"three-stars" }], ["Horrible", 1, { class:"three-stars" }, class: "horizontal-align" ]] %> </div>
+      <div class="col-md-6">
+        <div><%= f.label :note, :label => 'Note :' %> </div>
+        <div><%= f.input :note, collection: [['Excellent', 5, { class: "one-star" }], ['Très bien', 4, { class: "two-stars" }], ["Moyen", 3, { class:"three-stars" }], ["Nul", 2, { class:"three-stars" }], ["Horrible", 1, { class:"three-stars" }, class: "horizontal-align" ]], label: false, selected: "Moyen"   %> </div>
        </div>
 
+      <div class="col-md-6">
+        <div> <%= f.label :adresse, :label => 'Adresse du Spot :' %> </div>
+        <div> <%= f.input :adresse, label: false, input_html: { data: { geocoder_target: "adresse" }, class: "d-none" },
+              wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } }  %> </div>
+      </div>
+
+
+      <div class="col-md-6">
+        <div> <%= f.label :country, :label => 'Pays :' %> </div>
+        <div> <%= f.input :country, as: :country, label: false, selected: "FRANCE" %> </div>
+      </div>
+
+      <div class="col-md-12">
+       <div class="col-sm-4 col-form-label"><%= f.label :photo, :label => 'Photo 📸' %> </div>
+
+      <div><%= f.input :image, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Télécharge ta photo' %> </div>
+      </div>
+
+      <div class="col-md-6">
+        <div><%= f.label :description, :label => 'Description :' %> </div>
+        <div><%= f.input :description, label: false, placeholder: "Description du spot" %> </div>
+      </div>
+
+      <div class="col-md-6">
+        <div ><%= f.label :periode, :label => 'Meilleure Période 🌊' %> </div>
+        <div ><%= f.input :periode, label: false, placeholder: "13", collection: 5..22, selected: 13  %> </div>
+      </div>
+
+
+
 <%# -------------------------note-------------------------------------------------- %>
 
 
 <%# -------------------------note-------------------------------------------------- %>
 
-      <div class="row mb-3">
-       <div class="col-sm-2 col-form-label"><%= f.label :photo, :label => 'Photo 📸' %> </div>
 
-      <div class="col-sm-10"><%= f.input :image, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Télécharge ta photo' %> </div>
+
+      <div class="col-md-6">
+        <div ><%= f.label :best_tide, :label => 'Meilleure Marée 🌊' %> </div>
+        <div ><%= f.input :best_tide, label: false, placeholder: "Marée Basse", collection: ["Marée Haute", "Marée Basse", "Mi-marée montante", "Mi-marée descendante"], selected: "Marée haute"  %> </div>
       </div>
 
-
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :best_tide, :label => 'Meilleure Marée 🌊' %> </div>
-        <div class="col-sm-10"><%= f.input :best_tide, label: false, placeholder: "Marée Basse", collection: ["Marée Haute", "Marée Basse", "Mi-marée montante", "Mi-marée descendante"]  %> </div>
+      <div class="col-md-6">
+        <div ><%= f.label :best_wind, :label => 'Vent 💨'%> </div>
+        <div ><%= f.input :best_wind, label: false, placeholder: "Sud-Est", collection: ["Sud", "Sud-Est", "Sud-Ouest", "Ouest", "Est", "Nord", "Nord-Est", "Nord-Ouest"], selected: "Est"   %> </div>
+      </div>
+      <div class="col-md-6">
+        <div ><%= f.label :meilleure_taille, :label => 'Taille de vague 🌊' %> </div>
+        <div ><%= f.input :meilleure_taille, label: false, placeholder: "1m", collection: ["0,5 mètre", "1 mètre", "1,5 mètre", "2 mètres", "3 mètres", "4 mètres", "5 mètres", "6 mètres", "7 mètres"], selected: "1 mètre"  %> </div>
       </div>
 
-      <div class="row mb-3">
-        <div class="col-sm-2 col-form-label"><%= f.label :best_wind, :label => 'Vent 💨'%> </div>
-        <div class="col-sm-10"><%= f.input :best_wind, label: false, placeholder: "Sud-Est", collection: ["Sud", "Sud-Est", "Sud-Ouest", "Ouest", "Est", "Nord", "Nord-Est", "Nord-Ouest"]   %> </div>
+      <div class="col-md-6">
+        <div ><%= f.label :houle, :label => 'Direction de la houle'%> </div>
+        <div ><%= f.input :houle, label: false, placeholder: "Sud-Est", collection: ["Sud", "Sud-Est", "Sud-Ouest", "Ouest", "Est", "Nord", "Nord-Est", "Nord-Ouest"], selected: "Ouest"   %> </div>
       </div>
 
-      <div class="row mb-3"><%= f.button :submit,"Créer mon Spot", class: "btn btn-primary" %> </div>
+      <div class="col-md-12"><%= f.button :submit,"Créer mon Spot", class: "btn btn-primary" %> </div>
 
   <% end %>
+  </div>

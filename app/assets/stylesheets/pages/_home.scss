@@ -18,17 +18,31 @@
 }
 
 .carousel-caption h5 {
-  font-size: 90px;
+  font-size: 80px;
   color: white;
-  font-weight: 700;
+  font-weight: 500;
   font-family: futura;
 
 }
 .carousel-caption p {
-  font-size: 60px;
+  font-size: 50px;
   color: white;
   font-weight: 300;
   font-family: futura;
+}
+
+@media (min-width: 850px) {
+.carousel-item img {
+  height: 830px;
+}
+}
+
+@media (min-width: 578px) {
+.navbar-nav .nav-item li {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
 }
 
 

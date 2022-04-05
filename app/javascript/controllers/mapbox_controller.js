@@ -17,10 +17,13 @@ export default class extends Controller {
     });
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    this.#draggableMarkers()
     this.map.addControl(new MapboxGeocoder({
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl
+
     }))
+
   }
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
@@ -38,10 +41,17 @@ export default class extends Controller {
       .setPopup(popup)
       .addTo(this.map)
     })
+
   }
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([marker.lng, marker.lat]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
+
+  #draggableMarkers() {
+    const marker = new mapboxgl.Marker({
+      draggable: true
+    })
   }
 }

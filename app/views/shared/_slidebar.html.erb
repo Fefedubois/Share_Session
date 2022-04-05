@@ -1,0 +1,80 @@
+<%# ---------------------------/NAVBAR-------------------------------------------------- %>
+<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Welcome to SessionsShare</h3>
+            </div>
+
+
+            <ul class="list-unstyled components">
+                <p>Note tes spots et partage les à tes potes.</p>
+
+            <li class="nav-item">
+              <div class="nav-link">
+                <div class="input-group-prepend">
+                  <%= form_tag spots_path, method: :get do  %>
+                    <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control",
+                      placeholder: "Chercher un spot.." %>
+                      <%= submit_tag "🔎", class: "input-group-text", style: "border-top-right-radius: 30px; border-bottom-right-radius: 30px;" %>
+                      <% end %>
+                      </div>
+                    </div>
+            </li>
+                <li>
+                    <a href="../spots.html" id="slide1">MES SPOTS</a>
+
+                <li>
+                <li>
+                    <a href="#" id="slide2">COMMENT CA MARCHE ?</a>
+
+                <li>
+                <li>
+                    <a href="#" id="slide3">VALEURS ?</a>
+
+                <li>
+                    <%= link_to "DECONNEXION 🚀", destroy_user_session_path, method: :delete, id: "slide4" %></a>
+                </li>
+            </ul>
+
+
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                <a href="#" ><%= link_to "Ajouter un spot", new_spot_path, class:"download"  %></a>
+                </li>
+                <li>
+                    <a href="https://www.lacanausurfinfo.com/page/previsions-surf-plage-37/meteo-surf-7-jours.html" class="article">Favoris</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+            <div id="content">
+
+            <nav class="navbar navbar-expand-lg sticky-top">
+
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" onclick="closeNav()">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+
+
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="../spots.html" style="box-shadow: inset 0 -12px 0 #4d854b61;
+  color: rgb(53, 102, 83);">SessionsBoard</a>
+                            </li>
+<%# ---------------------------search bar---------------------------------------- %>
+
+<%# ---------------------------/search bar---------------------------------------- %>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+<%# ---------------------------/NAVBAR-------------------------------------------------- %>

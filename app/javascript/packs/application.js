@@ -8,6 +8,7 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "packs/photo_previews"
+import "controllers/navbar"
 
 Rails.start()
 Turbolinks.start()

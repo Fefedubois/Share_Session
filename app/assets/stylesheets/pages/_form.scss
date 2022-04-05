@@ -1,41 +1,68 @@
 .form-login h1 {
   font-size: 30px;
   font-weight: 500;
+  font-family: 'Varela Round', sans-serif;
   margin-bottom: 20px;
   text-align: center;
-  color: rgb(202, 93, 42);
+  color: rgb(43, 42, 42);
+}
+
+input {
+  margin-bottom: 1rem;
+    background: rgb(252, 252, 252);
 }
 
 .form-login {
-  background: white;
-  padding: 10px 20px;
+  background: rgb(252, 252, 252);
+  padding: 30px;
+  padding-top: 30px;
   margin-top: 50px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  border-radius: 30px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
+  align-items: center;
   h2 {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
+    color: rgb(48, 48, 48);
+
   }
   .btn {
     width: 100%;
   }
 }
 
+label {
+  color: rgb(0, 0, 0);
+  font-family: 'Varela Round', sans-serif;
+}
+
+::placeholder {
+  font-family: 'Varela Round', sans-serif;
+  color: #000000;
+}
+
 .upload-photo {
-  border: 2px solid #d3d3d3;
+  border: 2px solid #000000;
   padding: 16px 24px;
   cursor: pointer;
   font-weight: 500;
   background: white;
   border-radius: 2px;
+  color: grey;
+  font-family: 'Varela Round', sans-serif;width: 100%;
+  text-align: center;
+  width: 100%;
+
 }
 .upload-photo:hover {
-  border: 1px solid #d3d3d3;
+  border: 1px solid #131313;
   padding: 16px 24px;
   cursor: pointer;
   font-weight: 500;
-  background: rgba(179, 177, 177, 0.562);
+  background: rgba(253, 253, 253, 0.514);
   border-radius: 2px;
+  font-family: 'Varela Round', sans-serif;
 }

@@ -7,6 +7,7 @@ ruby '2.7.4'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+gem 'pg_search', '~> 2.3.0'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'simple_form_fancy_uploads'
@@ -32,6 +33,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'devise'
 gem "geocoder"
 gem 'country_select'
+gem 'pundit'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'

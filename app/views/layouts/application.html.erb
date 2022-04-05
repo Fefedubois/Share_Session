@@ -8,13 +8,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&family=Roboto:wght@400;700;900&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
 
     <%= yield %>
     <%= render 'shared/footer' %>

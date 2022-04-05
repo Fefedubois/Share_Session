@@ -3,6 +3,7 @@
   font-weight: 700;
   text-align: center;
   padding-top: 10px;
+  color: rgb(53, 102, 83);
 }
 
 .partage_ami p {
@@ -11,7 +12,51 @@
   font-size: 14px;
 }
 
+#sidebar ul p {
+  font-weight: 700;
+  color: #ed8675;
+}
+
 .card-body h5 {
   font-size: 30px;
   font-weight: 700;
+  box-shadow: inset 0 -12px 0 #4d854b61;
+  color: rgb(53, 102, 83);
+}
+
+tr strong {
+  box-shadow: inset 0 -12px 0 #4d854b61;
+  color: #ed8675;
+}
+.card-text strong {
+  box-shadow: inset 0 -12px 0 #4d854b61;
+  color: rgb(53, 102, 83);
+}
+.list-group-item strong {
+  box-shadow: inset 0 -12px 0 #4d854b61;
+  color: rgb(53, 102, 83);
+}
+
+.sidebar-header h3 {
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: inset 0 -12px 0 #4d854b61;
+  color: rgb(53, 102, 83);
+}
+
+#slide1 {
+  font-weight: 700;
+  color: rgb(53, 102, 83);
+}
+#slide2 {
+  font-weight: 700;
+  color: rgb(53, 102, 83);
+}
+#slide3 {
+  font-weight: 700;
+  color: rgb(53, 102, 83);
+}
+#slide4 {
+  font-weight: 700;
+  color: rgb(53, 102, 83);
 }

@@ -10,5 +10,16 @@ class Spot < ApplicationRecord
   validates :note, presence: true
   validates :adresse, presence: true
   validates :country, presence: true
+  validates :meilleure_taille, presence: true
+  validates :houle, presence: true
+  validates :periode, presence: true
+  validates :best_wind, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_adresse,
+    against: [ :name, :adresse ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
 end

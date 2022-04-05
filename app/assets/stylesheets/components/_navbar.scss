@@ -26,3 +26,39 @@ html {
 .footer .row {
   padding-top: 20px;
 }
+
+
+.nav-item .form-control {
+  background-color: white;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.bouton_nav input {
+  font-size: 10px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav-link form {
+  display: flex;
+  margin-top: 10px;
+
+}
+
+a.dropdown-toggle {
+  font-size: 30px;
+}
+
+.dropdown-menu.show {
+ margin-top: 1.125rem;
+ text-decoration: none;
+}
+
+
+
+.dropdown-menu a {
+  text-decoration: none;
+}

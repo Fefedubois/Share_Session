@@ -1,3 +1,5 @@
+<%= render 'shared/slidebar' %>
+
 
 <div class="container">
   <div class="modal-body row">
@@ -13,13 +15,70 @@
                 <div class="card-body">
                   <h5 class="card-title"><%= @spot.name.capitalize %></h5>
                   <p class="card-text"> <%= @spot.country%> </p>
-                  <p class="card-text"> <strong>Description : </strong>  <%= @spot.description %> </p>
+                  <p class="card-text"> <strong>Description :</strong>  <%= @spot.description %> </p>
                 </div>
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> <strong> Note : </strong> <%= @spot.note %>/5 </li>
-                    <li class="list-group-item"> <strong>Meilleure Marée :</strong> <%= @spot.best_tide.capitalize %></li>
-                    <li class="list-group-item"><strong> Meilleur vent :</strong> <%= @spot.best_wind.capitalize %></li>
+                    <li class="list-group-item"> <strong> Note :</strong> <%= @spot.note %>/5 </li>
                   </ul>
+
+
+<table>
+  <tr>
+    <td id="titre1"><strong>Taille</strong></td>
+    <td id="titre1"><strong>Meilleure Marée</strong></td>
+    <td id="titre1"><strong>Meilleur période</strong></td>
+    <td id="titre1"><strong>Direction vent</strong></td>
+    <td id="titre1"><strong>Direction houle</strong></td>
+  </tr>
+  <tr>
+    <td><%= @spot.meilleure_taille %></td>
+    <td><%= @spot.best_tide.capitalize %></td>
+    <td><%= @spot.periode %></td>
+    <td>
+                    <% if @spot.best_wind == "Sud-Est" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-SE.png" title="SE">
+                     <% elsif @spot.best_wind == "Sud" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-S.png" title="S">
+                     <% elsif @spot.best_wind == "Sud-Ouest" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-OSO.png" title="OSO">
+                     <% elsif @spot.best_wind == "Ouest" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-O.png" title="O">
+                     <% elsif @spot.best_wind == "Est" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-E.png" title="E">
+                     <% elsif @spot.best_wind == "Nord-Est" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-NE.png" title="NE">
+                     <% elsif @spot.best_wind == "Nord" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-N.png" title="N">
+                     <% elsif @spot.best_wind == "Nord-Ouest" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-NO.png" title="O">
+                     <% end %>
+      <%= @spot.best_wind.capitalize %>
+    </td>
+
+    <td>
+                     <% if @spot.houle == "Sud-Est" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-SE.png" title="SE">
+                     <% elsif @spot.houle == "Sud" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-S.png" title="S">
+                     <% elsif @spot.houle == "Sud-Ouest" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-OSO.png" title="OSO">
+                     <% elsif @spot.houle == "Ouest" %>
+                     <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-O.png" title="O">
+                     <% elsif @spot.houle == "Est" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-E.png" title="E">
+                     <% elsif @spot.houle == "Nord-Est" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-NE.png" title="NE">
+                     <% elsif @spot.houle == "Nord" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-N.png" title="N">
+                     <% elsif @spot.houle == "Nord-Ouest" %>
+                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-NO.png" title="O">
+                     <% end %>
+        <%= @spot.houle %>
+    </td>
+  </tr>
+
+</table>
+
                 <div class="card-body">
                   <a class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success', style: "font-size: 14px;"  %> |</a>
                   <a class="card-link"><%= link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Etes vous sur?' }, class: 'btn btn-outline-primary', style: "font-size: 14px;" %> |</a>

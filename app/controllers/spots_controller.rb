@@ -4,6 +4,21 @@ class SpotsController < ApplicationController
 
   # GET /spots or /spots.json
   def index
+
+    if params[:query].present?
+      @spots = Spot.search_by_name_and_adresse(params[:query])
+
+       @markers = @spots.geocoded.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { spot: spot }),
+        image_url: helpers.asset_url("vague.png")
+      }
+    end
+
+
+    else
     @spots = Spot.all
 
     @markers = @spots.geocoded.map do |spot|
@@ -13,6 +28,7 @@ class SpotsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { spot: spot }),
         image_url: helpers.asset_url("vague.png")
       }
+      end
     end
   end
 
@@ -84,6 +100,6 @@ class SpotsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spot_params
-      params.require(:spot).permit(:name, :country, :adresse, :publish_date, :best_tide, :best_wind, :latitude, :longitude, :note, :user_id, :description, :image)
+      params.require(:spot).permit(:name, :country, :adresse, :publish_date, :best_tide, :best_wind, :latitude, :longitude, :note, :user_id, :description, :image, :periode, :meilleure_taille, :houle )
     end
 end
