@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <td><%= @spot.meilleure_taille %></td>
-    <td><%= @spot.best_tide.capitalize %></td>
+    <td><%= @spot.best_tide %></td>
     <td><%= @spot.periode %></td>
     <td>
                     <% if @spot.best_wind == "Sud-Est" %>
@@ -105,4 +105,9 @@
             </div>
           </div>
   </div>
+
+
+ <div id="windy"></div>
+        <script src="script.js"></script>
+
 </div>

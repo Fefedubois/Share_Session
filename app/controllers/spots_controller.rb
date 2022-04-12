@@ -1,5 +1,6 @@
 class SpotsController < ApplicationController
   before_action :set_spot, only: %i[ show edit update destroy ]
+
   skip_before_action :verify_authenticity_token
 
   # GET /spots or /spots.json
@@ -19,7 +20,7 @@ class SpotsController < ApplicationController
 
 
     else
-    @spots = Spot.all
+    @spots = current_user.spots
 
     @markers = @spots.geocoded.map do |spot|
       {

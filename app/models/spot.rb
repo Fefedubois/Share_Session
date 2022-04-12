@@ -6,7 +6,7 @@ class Spot < ApplicationRecord
   has_one_attached :image
 
   validates :name, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, length: {minimum: 40}
   validates :note, presence: true
   validates :adresse, presence: true
   validates :country, presence: true

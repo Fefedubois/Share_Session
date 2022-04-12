@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "packs/photo_previews"
 import "controllers/navbar"
+import "controllers/windy_controller"
 
 Rails.start()
 Turbolinks.start()
