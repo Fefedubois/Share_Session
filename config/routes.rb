@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'pages/about'
   get 'pages/values'
+  get 'pages/howitworks'
 
   resources :spots do
     get 'top'

@@ -1,15 +1,23 @@
     <%= render 'shared/slidebar' %>
+    <div class="container">
+      <div class="row ">
+        <div class="col-8">
+          <div class="form-login">
+            <h1>Ajouter un nouveau Spot </h1>
 
-<div class="container-sm">
-  <div class="row justify-content-center">
-    <div class="col-sm">
-      <div class="form-login">
-        <h1>Ajouter un nouveau Spot </h1>
+            <%= render 'form', spot: @spot %>
 
-        <%= render 'form', spot: @spot %>
-
-        <%= link_to 'Retour', spots_path, class: "btn btn-outline-danger" %>
+            <%= link_to 'Retour', spots_path, class: "btn btn-outline-danger" %>
+          </div>
         </div>
+
+
+        <div class="col-4" id="map-form">
+            <div id="map" style="width: 100%; height: 761px;" style="position:sticky"
+                data-controller="mapbox"
+                data-mapbox-markers-value="<%= @markers.to_json %>"
+                data-mapbox-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
+            </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>

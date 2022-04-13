@@ -1,0 +1,101 @@
+.thumbnail {
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  border-radius: 30px;
+}
+
+.cadre{
+  margin-top: 60px;
+}
+.cadre h2 {
+  font-size: 30px;
+  font-weight: 600;
+  box-shadow: inset 0 -12px 0 #4d854b61;
+  margin-bottom: 15px;
+}
+.cadre h4 {
+font-size: 24px;
+font-weight: 700;
+color: #356653;
+margin-bottom: 30px;
+}
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.banner h3 {
+margin: 0;
+color: white;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+font-size: 32px;
+font-weight: bold;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 223px 0;
+  border-radius: 30px;
+  margin-bottom: 26px;
+}
+
+// ----------fin card---------------------------------
+
+.cadre2 {
+  margin-top: 60px;
+}
+
+.panel {
+  border: 1px solid #b4cab4;
+  border-radius: 0;
+  transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+  box-shadow: 5px 0px 40px rgba(0, 0, 0, .2);
+}
+
+.panel-footer .btn:hover {
+  border: 1px solid #b4cab4;
+  background-color: #fff !important;
+  color: #f4511e;
+}
+
+.panel-heading {
+  color: #fff !important;
+  background-color: #b4cab4 !important;
+  padding: 25px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+  background-color: #fff !important;
+}
+
+.panel-footer h3 {
+  font-size: 32px;
+}
+
+.panel-footer h4 {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.panel-footer .btn {
+  margin: 15px 0;
+  background-color: #f4511e;
+  color: #fff;
+}

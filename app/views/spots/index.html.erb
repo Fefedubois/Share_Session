@@ -15,21 +15,23 @@
         <div class="colonne_gauche">
 <%#------------------------Carte vide-------------------------------------------  %>
           <div class="carte_vide">
-            <div class="card" style="width: 100%;">
+          <%= link_to new_spot_path do %>
+            <div class="card" style="width: 100%;" >
               <div class="card_image">
                   <img src="https://www.situaction.fr/wp-content/uploads/2017/08/add-icone.jpg" class="card-img-top">
               </div>
                   <div class="card_content">
-                    <h5 class="card-title"><h2  style="font-size: 22px; min-height: 31px ;font-weight: 700; color: white;"><%= "Nom du Spot" %></h2> </h5>
+                    <h5 class="card-title"><h2  style="font-size: 22px; min-height: 31px ;font-weight: 700; color: white;"><%= "Créer un Spot" %></h2> </h5>
                     <h4  style="font-size: 15px; text-transform: capitalize, min-height: 31px;"><%= "Pays" %> </h4>
-                    <p class="card_text"><%= "Description du spot" %>...</p>
+                    <p class="card_text" style="margin-bottom: -45px;"><%= "Description du spot" %>...</p>
                       <div class="text-center">
                           <%= link_to 'Créer un spot', new_spot_path, class: "btn btn-outline-primary", style: "font-size: 12px; position: relative; top:20px; align-items: center; color: white; border: solid 2px white" %>
                       </div>
+                      <% end %>
                   </div>
             </div>
           </div>
-<%#------------------------Carte vide-------------------------------------------  %>
+<%#------------------------fin Carte vide-------------------------------------------  %>
 
 
 
@@ -39,7 +41,7 @@
                 <% if spot.image.attached? %>
                   <%= image_tag spot.image %>
                 <% else %>
-                  <img src="http://www.boardrap.com/wp-content/uploads/2017/07/skeleton-bay-namibia-best-surf-line-up-shot-ever.jpg" class="card-img-top">
+                  <img src="https://images.unsplash.com/photo-1526342122811-2a9c8512023d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHN1cmZpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" class="card-img-top">
                 <% end %>
               </div>
                   <div class="card_content">

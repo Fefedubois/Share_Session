@@ -17,7 +17,8 @@ input {
   padding: 30px;
   padding-top: 30px;
   margin-top: 50px;
-  border-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   margin-bottom: 1rem;
   align-items: center;
@@ -65,4 +66,15 @@ label {
   background: rgba(253, 253, 253, 0.514);
   border-radius: 2px;
   font-family: 'Varela Round', sans-serif;
+}
+
+
+#map-form {
+    padding-top: 20px;
+    margin-top: 50px;
+    border-radius: 30px;
+
+    margin-bottom: 1rem;
+    align-items: center;
+    padding-left: 0px;
 }
