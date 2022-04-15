@@ -18,3 +18,189 @@
   height: 172px;
   margin-top: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.forecast-live .title {
+  padding-left: 10px;
+}
+
+.forecast-live .title .gps {
+  float: right;
+  margin-right: 20px;
+}
+
+.forecast-live .content {
+  /*background: #e8e8e8;*/
+  color: #000;
+  font-size: 12px;
+  width: 100%;
+  /*padding: 10px;*/
+}
+
+.forecast-live .forecast {
+  display: flex;
+  width: 100%;
+}
+
+.forecast-live .forecast .weather {
+  flex: 0.20;
+}
+
+.forecast-live .forecast .temp {
+  flex: 0.20;
+}
+
+.forecast-live .forecast .temp .air {
+  margin-top: 20px;
+  font-size: 36px;
+  font-weight: 700;
+  color: #015368;
+}
+
+.forecast-live .forecast .temp .eau {
+  font-size: 18px;
+  color: #66c5de;
+}
+
+.forecast-live .forecast .temp .air span {
+  font-size: 26px;
+  font-weight: 400;
+  color: #888888;
+}
+
+.forecast-live .forecast .temp .eau span {
+  color: #888888;
+}
+
+.forecast-live .forecast .waves {
+  flex: 0.6;
+}
+
+.forecast-live .forecast .waves.bis {
+  flex: 1;
+}
+
+.forecast-live .forecast .waves .wave {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #888888;
+  text-align: left;
+}
+
+.forecast-live .forecast .waves .wave span {
+  color: #015368;
+  font-size: 36px;
+}
+
+.forecast-live .forecast .waves .wind {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.forecast-live .forecast .waves .primary {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.forecast-live .forecast .waves .wave span.stars {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.forecast-live .forecast .waves .element-container {
+  display: flex;
+  margin-bottom: 5px;
+  color: #015368;
+}
+
+.forecast-live .forecast .waves .element-container span {
+  color: #888888;
+  font-size: 14px;
+}
+
+.forecast-live .forecast .waves .element-container .element-title {
+  flex: 0.15;
+  height: 100%;
+  background: #888888;
+  padding: 3px 0 3px 5px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.forecast-live .forecast .waves .element-container .element {
+  flex: 0.85;
+  padding: 0px 0 0 5px;
+}
+
+.forecast-live .tides {
+  background: #efefef;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  display: flex;
+}
+
+.forecast-live .tides .tide-title {
+  flex: 1;
+  background: #888888;
+  padding: 3px 0 3px 5px;
+  color: #fff;
+  font-size: 13px;
+  border-right: 2px solid #efefef;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.forecast-live .tides .tide-element {
+  flex: 1;
+  background: #888888;
+  padding: 3px 0 3px 5px;
+  color: #fff;
+  font-size: 13px;
+  border-right: 2px solid #efefef;
+  text-align: center;
+}
+
+.forecast-live .tides .tide-element.coeff {
+  border-right: 2px solid #888888;
+}
+
+.forecast-live .explain {
+  color: #888888;
+  font-size: 11px;
+  text-align: center;
+}
+
+.forecast-days .title {
+  padding-left: 10px;
+}
+
+.description {
+  color: #888888;
+  font-size: 12px;
+  text-align: justify;
+}
+
+.description h2 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}

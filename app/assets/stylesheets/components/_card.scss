@@ -2,8 +2,6 @@
 .colonne_gauche .card {
   margin-bottom: 10px;
   height: 450px;
-
-
 }
 
 .card-body h2 {
@@ -43,6 +41,21 @@
   padding-right: 20px;
 }
 
+h5.card-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(53, 102, 83);
+  margin-left: 20px;
+
+}
+
+.ligne_grise {
+  border-top-width: 1px ;
+  border-top-style: solid ;
+  border-top-color: rgba(140, 122, 122, 0.23);
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
 
 /* Design */
 *,
@@ -126,7 +139,7 @@ h2 .card_title  {
 }
 
 
-.card:hover {
+.colonne_gauche .card:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
@@ -145,4 +158,36 @@ h2 .card_title  {
 }
 .carte_vide .card_image {
   background-color: grey;
+}
+
+
+//---------------responsive--------------------
+@media (max-width: 776px) {
+  .card-img-top img {
+  border-radius: 30px;
+  }
+
+  .title_btn .card-body {
+    display: flex;
+    margin-left: 20px;
+  }
+
+  a.card-link {
+    margin-left: 4px;
+  }
+  }
+
+@media (max-width: 546px) {
+  .title_btn .card-body {
+    display: flex;
+    flex-direction: column;
+
+  }
+  a.card-link {
+    margin-top: 9px;
+  }
+  .card_totale_text {
+  flex-direction: column;
+  margin-left: 20px;
+  }
 }

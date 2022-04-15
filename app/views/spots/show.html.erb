@@ -1,25 +1,44 @@
-<%= render 'shared/slidebar' %>
-
 
 <div class="container">
-  <div class="modal-body row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-          <div class="card" style="width: 100%;">
-              <div class="card-img-top">
-                <% if @spot.image.attached? %>
-                <%= image_tag @spot.image, style:"height: 300px; width: 100%;" %>
-                <% else %>
-                <img src="https://images.unsplash.com/photo-1466094899371-97b327dff551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fHN1cmZpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" style="width: 100%; height: 300px;" class="card-img-top">
-                <% end %>
-              </div>
-                <div class="card-body">
-                  <h5 class="card-title"><%= @spot.name.capitalize %></h5>
-                  <p class="card-text"> <%= @spot.country%> </p>
-                  <p class="card-text"> <strong>Description :</strong>  <%= @spot.description %> </p>
+  <div class="modal-body row" style="margin-top: 20px; justify-content: center">
+    <div class="show_title" style="display: flex; justify-content: space-between; align-content: stretch; align-items: stretch;">
+      <div class="title_title">
+        <h5 class="card-title" style="margin-bottom: 2px;"><%= @spot.name.capitalize %></h5>
+        <div class="card_totale_text" style="display: flex;">
+          <p class="card-text" style="margin-left: 20px; padding-top:0px; font-size: 14px;"> <div class="card-text1"> · <%= @spot.country%></div> <div class="card-text2"> ·  <%= @spot.note %> <i class="fa-solid fa-star" style="color: #e61e4e;"></i></div> <div class="card-text3"> · Crée le <%= @spot.created_at.to_formatted_s(:short)%></div> </p>
+        </div>
+      </div>
+
+      <div class="title_btn">
+          <div class="card-body" style="padding-top: 19px; padding-left: 10px; margin-bottom: 17px;padding-bottom: 5px;">
+            <a class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success', style: "font-size: 14px;"  %> </a>
+            <a class="card-link"><%= link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Etes vous sur?' }, class: 'btn btn-outline-primary', style: "font-size: 14px;" %> </a>
+            <a class="card-link"><%= link_to 'Retour', spots_path, class: 'btn btn-outline-danger', style: "font-size: 14px;"  %></a>
+          </div>
+        </div>
+    </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-7">
+            <div class="card" style="width: 100%; border-radius: 30px; background-color: #f3f3f3; border: 0px">
+                <div class="card-img-top">
+                  <% if @spot.image.attached? %>
+                  <%= image_tag @spot.image, style:"height: 300px; width: 100%; object-fit: cover; BORDER-TOP-LEFT-RADIUS: 30px; BORDER-BOTTOM-LEFT-RADIUS: 30px;" %>
+                  <% else %>
+                  <img src="https://images.unsplash.com/photo-1466094899371-97b327dff551?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTB8fHN1cmZpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" style="width: 100%; height: 300px;" class="card-img-top">
+                  <% end %>
                 </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> <strong> Note :</strong> <%= @spot.note %>/5 </li>
-                  </ul>
+
+                <ul class="list-group list-group-flush" style="border-top-color: rgb(220, 220, 220);"></ul>
+                <h5 class="card-adresse" style="margin-bottom: 2px; margin-top: 20px; margin-left: 10px;"><%= @spot.adresse %></h5>
+
+                  <div class="card-body" style="padding-top: 0px; padding-left: 10px;">
+                  <div class="ligne_grise"></div>
+                    <p class="card-text" style="line-height: 24px; font-size: 14px; -webkit-line-clamp: 6; display: -webkit-box; -webkit-line-clamp: 6;-webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;"> <%= @spot.description %> </p>
+                  </div>
+                  <div class="ligne_grise"></div>
+
+
+
 
 
 <table>
@@ -33,7 +52,7 @@
   <tr>
     <td><%= @spot.meilleure_taille %></td>
     <td><%= @spot.best_tide %></td>
-    <td><%= @spot.periode %></td>
+    <td><%= @spot.periode %> s</td>
     <td>
                     <% if @spot.best_wind == "Sud-Est" %>
                      <img width="25" height="25" src="https://www.francesurfinfo.com/affiliation/images/previsions/direction-SE.png" title="SE">
@@ -77,25 +96,23 @@
     </td>
   </tr>
 
-</table>
 
-                <div class="card-body">
-                  <a class="card-link"> <%= link_to 'Modifier', edit_spot_path(@spot), class: 'btn btn-outline-success', style: "font-size: 14px;"  %> |</a>
-                  <a class="card-link"><%= link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Etes vous sur?' }, class: 'btn btn-outline-primary', style: "font-size: 14px;" %> |</a>
-                  <a class="card-link"><%= link_to 'Retour', spots_path, class: 'btn btn-outline-danger', style: "font-size: 14px;"  %></a>
-                </div>
-            </div>
+</table>
+</div>
+
     </div>
 
 
-          <div class="col-xs-12 col-sm-6 col-md-6">
+          <div class="col-xs-12 col-sm-6 col-md-5">
             <div class="colonne_droite_show">
-              <div id="map" style="width: 100%; height: 500px;"
+              <div id="map" style="width: 100%; height: 643px; margin-top: 13px; object-fit: cover; "
                 data-controller="mapbox"
                 data-mapbox-markers-value="<%= @markers.to_json %>"
                 data-mapbox-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>">
               </div>
 
+          </div>
+  </div>
               <div class="partage_ami">
                 <h3> <%= "Partager ce spot à un ami" %> </h3>
                 <p> <%= "Facebook : www.sdniznfiaiaoizi.com" %> </p>
@@ -103,8 +120,6 @@
                 <p> <%= "Lien : www.sdniznfiaiaoizi.com" %> </p>
               </div>
             </div>
-          </div>
-  </div>
 
 
  <div id="windy"></div>

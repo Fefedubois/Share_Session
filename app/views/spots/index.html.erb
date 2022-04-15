@@ -1,10 +1,10 @@
-    <%= render 'shared/slidebar' %>
 
 <div class="container">
   <div class="modal-body row">
+
       <div class="col-xs-12 col-sm-4 col-md-4">
         <div class="colonne_droite ">
-          <div id="map" style="width: 100%; min-height: 100vh;" style="position:sticky"
+          <div id="map" style="width: 100%; min-height: 100vh; margin-top: 16px;" style="position:sticky"
             data-controller="mapbox"
             data-mapbox-markers-value="<%= @markers.to_json %>"
             data-mapbox-api-key-value="<%= ENV["MAPBOX_API_KEY"] %>"></div>
@@ -36,27 +36,29 @@
 
 
           <% @spots.each do |spot| %>
-            <div class="card" style="width: 100%;">
-              <div class="card_image">
-                <% if spot.image.attached? %>
-                  <%= image_tag spot.image %>
-                <% else %>
-                  <img src="https://images.unsplash.com/photo-1526342122811-2a9c8512023d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHN1cmZpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" class="card-img-top">
-                <% end %>
-              </div>
-                  <div class="card_content">
-                    <h5 class="card-title"><h2  style="font-size: 22px; min-height: 31px ;font-weight: 700; box-shadow: inset 0 -12px 0 #4d854b61; color: rgb(53, 102, 83);"><%= spot.name.capitalize %></h2> </h5>
-                    <h4  style="font-size: 15px; text-transform: capitalize, min-height: 31px;"><%= spot.country%> </h4>
-                    <p class="card_text"><%= spot.description.first(70) %>...</p>
-                      <div class="text-center">
-                          <% link_to 'Mettre à jour', edit_spot_path(@spots) %>
-                          <%= link_to 'Voir le spot', spot, class: "btn btn-outline-primary", style: "font-size: 12px; position: relative; top:20px; align-items: center" %>
-                          <% link_to 'Ajouter aux favoris', spot, class: "btn btn-outline-success" %>
-                          <% link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Are you sure?' } %>
-                      </div>
-                  </div>
-          </div>
+              <div class="card" style="width: 100%;">
+            <%= link_to spot do %>
+                <div class="card_image">
+                  <% if spot.image.attached? %>
+                    <%= image_tag spot.image %>
+                  <% else %>
+                    <img src="https://images.unsplash.com/photo-1526342122811-2a9c8512023d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHN1cmZpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" class="card-img-top">
+                  <% end %>
+                </div>
+                    <div class="card_content">
+                      <h5 class="card-title"><h2  style="font-size: 22px; min-height: 31px ;font-weight: 700; box-shadow: inset 0 -12px 0 #4d854b61; color: rgb(53, 102, 83);"><%= spot.name.capitalize %></h2> </h5>
+                      <h4  style="font-size: 15px; text-transform: capitalize, min-height: 31px;"><%= spot.country%> </h4>
+                      <p class="card_text"><%= spot.description.first(70) %>...</p>
+                        <div class="text-center">
+                            <% link_to 'Mettre à jour', edit_spot_path(@spots) %>
+                            <%= link_to 'Voir le spot', spot, class: "btn btn-outline-primary", style: "font-size: 12px; position: relative; top:20px; align-items: center" %>
+                            <% link_to 'Ajouter aux favoris', spot, class: "btn btn-outline-success" %>
+                            <% link_to 'Supprimer', @spot, method: :delete, data: { confirm: 'Are you sure?' } %>
+                        </div>
+                    </div>
+            </div>
             <% end %>
+          <% end %>
         </div>
       </div>
   </div>

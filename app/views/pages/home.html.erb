@@ -1,10 +1,4 @@
-<% if user_signed_in? %>
-<%= render 'shared/slidebar' %>
 
-<%# --------------utilisateur NON connecté----------------------------------------- %>
-<% else %>
-<%= render 'shared/navbar' %>
-<% end %>
 <%# ----------------------------------------fin navbar--------------------------- %>
 
 
@@ -63,7 +57,7 @@
               <p><strong>100% gratuit et sans pub.</strong></p>
 
             <!-- CTA -->
-            <a target="_blank" href="https://mdbootstrap.com/getting-started/" class="btn btn-outline-primary btn-md">Découvrir
+            <a target="_blank" href="../users/sign_up" class="btn btn-outline-primary btn-md">Découvrir
               <i class="fa-solid fa-angle-right"></i>
             </a>
 

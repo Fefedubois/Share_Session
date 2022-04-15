@@ -2,6 +2,8 @@
 <div class="wrapper">
         <!-- Sidebar  -->
         <nav id="sidebar">
+         <div class="conten_nav">
+
             <div class="sidebar-header">
                 <h3>Welcome to SessionsShare</h3>
             </div>
@@ -28,11 +30,11 @@
 
                 <li>
                 <li>
-                    <a href="pages/howitworks.html" id="slide2">COMMENT CA MARCHE ?</a>
+                    <a href="../pages/howitworks.html" id="slide2">COMMENT CA MARCHE</a>
 
                 <li>
                 <li>
-                    <a href="pages/values.html" id="slide3">VALEURS ?</a>
+                    <a href="../pages/values.html" id="slide3">VALEURS ?</a>
 
                 <li>
                     <%= link_to "DECONNEXION 🚀", destroy_user_session_path, method: :delete, id: "slide4" %></a>
@@ -49,12 +51,14 @@
                     <a href="https://www.lacanausurfinfo.com/page/previsions-surf-plage-37/meteo-surf-7-jours.html" class="article">Favoris</a>
                 </li>
             </ul>
+           </div>
         </nav>
 
         <!-- Page Content  -->
             <div id="content">
 
-            <nav class="navbar navbar-expand-lg sticky-top">
+            <nav class="navbar navbar-expand-lg sticky-top" style="overflow: hidden;
+">
 
 
                     <button type="button" id="sidebarCollapse" class="btn btn-info" onclick="closeNav()">

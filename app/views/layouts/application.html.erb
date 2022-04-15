@@ -31,6 +31,13 @@
   <body>
     <%= render 'shared/flashes' %>
 
+    <% if user_signed_in? %>
+     <%= render 'shared/slidebar' %>
+    <% else %>
+      <%= render 'shared/navbar' %>
+    <% end %>
+
+
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
