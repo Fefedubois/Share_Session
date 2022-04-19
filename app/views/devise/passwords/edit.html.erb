@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-4">
+    <div class="col-12 col-sm-6 col-lg-6">
       <div class="form-login">
         <h2>Changer son mot de passe </h2>
 
@@ -12,19 +12,19 @@
 
           <div class="form-inputs">
             <%= f.input :password,
-                        label: "New password",
+                        label: "Nouveau mot de passe",
                         required: true,
                         autofocus: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
-                        label: "Confirm your new password",
+                        label: "Confirmez votre nouveau mot de passe",
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Change my password" %>
+            <%= f.button :submit, "Changer mon mot de passe" %>
           </div>
         <% end %>
 

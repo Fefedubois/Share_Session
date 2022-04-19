@@ -166,6 +166,11 @@ h2 .card_title  {
   .card-img-top img {
   border-radius: 30px;
   }
+  .card_totale_text {
+    flex-direction: column;
+    font-size: 14px;
+    margin-left: 15px;
+    }
 
   .title_btn .card-body {
     display: flex;
@@ -175,7 +180,15 @@ h2 .card_title  {
   a.card-link {
     margin-left: 4px;
   }
+  table {
+    margin-bottom: 20px;
   }
+  table td {
+    font-size: 10px;
+    padding: 3px;
+  }
+  }
+
 
 @media (max-width: 546px) {
   .title_btn .card-body {
@@ -188,6 +201,22 @@ h2 .card_title  {
   }
   .card_totale_text {
   flex-direction: column;
-  margin-left: 20px;
+  font-size: 14px;
+  margin-left: 15px;
   }
+  .card-text1 {
+    padding-top: 5px;
+  }
+  .card-text2 {
+    padding-top: 5px;
+  }
+  .card-text3 {
+    padding-top: 5px;
+  }
+  table {
+    margin-bottom: 20px;
+  }
+  .card-link a.btn {
+      font-size: 10px;
+    }
 }

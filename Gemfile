@@ -34,6 +34,7 @@ gem 'devise'
 gem "geocoder"
 gem 'country_select'
 gem 'pundit'
+gem 'activeadmin'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
